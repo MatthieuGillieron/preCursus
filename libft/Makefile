@@ -6,7 +6,7 @@
 #    By: mg <mg@student.42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/05 11:12:59 by mg                #+#    #+#              #
-#    Updated: 2024/08/05 15:52:09 by mg               ###   ########.fr        #
+#    Updated: 2024/08/07 15:32:47 by mg               ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@
 NAME = libft.a
 
 SRC = ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c\
-ft_isprint.c ft_strlen.c ft_memset.c ft_bzero.c
+ft_isprint.c ft_strlen.c ft_memset.c ft_bzero.c ft_memcpy\
 
 OBJS = $(SRC:.c=.o) 
 
