@@ -1,39 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memove.c                                        :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mg <mg@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/07 15:40:35 by mg                #+#    #+#             */
-/*   Updated: 2024/08/08 23:19:36 by mg               ###   ########.fr       */
+/*   Updated: 2024/08/16 11:49:13 by mg               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memmove(void *dest, const void *src, size_t len)
-{
-	size_t	i;
+#include "libft.h"
 
-	if (!dest && !src)
-		return (dest);
-	if (dest > src)
-	{
-		i = 0;
-		while (i < len)
-		{
-			((char *)dest)[i] = ((char *)src)[i];
-			i++;
-		}
-	}
-	else
-	{
-		while (len > 0)
-		{
-			len--;
-			((char *)dest)[len] = ((char *)src)[len];
-		}
-	}
+void	*ft_memmove(void *dest, const void *src, size_t size)
+{
+	char	*tmp;
+
+	tmp = (char *)malloc(sizeof(char) * size);
+	if (tmp == NULL)
+		return (NULL);
+	ft_memcpy(tmp, src, size);
+	ft_memcpy(dest, tmp, size);
+	free(tmp);
 	return (dest);
 }

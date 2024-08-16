@@ -35,11 +35,12 @@ fclean: clean
 # Recompilation complète
 re: fclean all
 
-# Exécution de tous les tests
-run: $(TEST_EXECS)
+# Exécution de tous les tests et suppression des fichiers .out
+magillie: $(TEST_EXECS)
 	@for exec in $(TEST_EXECS); do \
 		echo "Running $$exec"; \
 		./$$exec; \
+		rm -f $$exec; \
 	done
 
-.PHONY: all clean fclean re run
+.PHONY: all clean fclean re magillie
